@@ -1,0 +1,38 @@
+.regis-form {
+    h2 {
+        padding-top: 200x;
+        padding-bottom: 10px;
+    }
+    
+    img {
+    float: right;
+    width: 640px;
+    height: 720px;
+    left: 0px;
+    top: 0px;
+    background: #22345C;
+    max-width: 100%;
+    height: auto;
+    }
+
+    input {
+        background-color: rgba(216, 215, 215, 0.898);
+        width: 328px;
+        height: 45px;
+        border-radius: 5px;
+        border: 1px;
+        padding-left: 10px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        vertical-align: middle;
+    }
+    button {
+        background-color: #22345C;
+        width: 328px;
+        height: 49px;
+        color: white;
+        font-size: 16px;
+        margin-top: 15px;
+    }
+}
+

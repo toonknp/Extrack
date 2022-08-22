@@ -1,0 +1,21 @@
+.ButtonHomePage-container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .ButtonHomePage-container .button-homePage {
+    width: 328px;
+    height: 71.64px;
+    left: 86px;
+    top: 498px;
+    background: #22345c;
+    border: 1px solid #ffc526;
+    border-radius: 4px;
+    filter: drop-shadow(8px 8px 0px #ffc526);
+  
+    font-weight: 550;
+    font-size: 24px;
+  
+    color: white;
+  }

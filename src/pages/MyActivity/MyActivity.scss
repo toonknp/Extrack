@@ -1,0 +1,38 @@
+/* * {
+    border: 1px solid red;
+} */
+
+.my-activity {
+    /* padding-top: 72px; */
+    display: inline-flex;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #EFEFE9;
+
+
+// sidebar {
+//     width: 600px;
+//     background-color: #22345C;
+//     border-radius: 0 0rem 0rem 0;
+//     color : #EFEFE9
+// }
+
+container {
+    margin: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ h1 {
+    text-align: left;
+    width: 80%;
+    margin: 3rem auto 1rem;
+    color: #22345C
+}
+img {
+    float: right;
+    margin-top: 30px;
+    padding-right: 30px;
+};
+}
