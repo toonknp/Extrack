@@ -43,8 +43,8 @@ function BarChart() {
 
         <Chart
           type="bar"
-          width={550}
-          height={350}
+          width={650}
+          height={410}
           series={[
             {
               name: "Track History",
@@ -54,7 +54,7 @@ function BarChart() {
           options={{
             title: {
               text: "",
-              style: { fontSize: 30 },
+              style: { fontSize: 20 },
             },
 
             subtitle: {
@@ -62,15 +62,15 @@ function BarChart() {
               style: { fontSize: 18 },
             },
 
-            colors: ["#22345C"],  //สีกราฟแท่ง 
-            theme: { mode: "light" },
+            colors: ["#22345c"],  //สีกราฟแท่ง 
+            theme: { mode: "Heavy" },
 
             xaxis: {
               tickPlacement: "on",
               categories: trackingName,  //ก่อนเอามาใช้ตรงนี้ต้องเปลี่ยนจาก objarray -> array ก่อน | ยังไม่ทำ!!
               title: {
                 text: "Day per week",
-                style: { color: "#22345C", fontSize: 17 },  //สีชื่อแกน x
+                style: { color: "#22345c", fontSize: 17   },  //สีชื่อแกน x
               },
             },
 
@@ -79,11 +79,11 @@ function BarChart() {
                 formatter: (val) => {
                   return `${val}`;
                 },
-                style: { fontSize: "15", colors: ["#22345C"] }, //สีอักษรแกน y
+                style: { fontSize: "17", colors: ["#22345c"] }, //สีอักษรแกน y
               },
               title: {
                 text: "Time (minute)",
-                style: { color: "#22345C", fontSize: 17 },  //สีแกน y
+                style: { color: "#22345c", fontSize: 17 },  //สีแกน y
               },
             },
 
@@ -97,7 +97,7 @@ function BarChart() {
                 return `${val}`;
               },
               style: {
-                colors: ["#F1C40F"],  //text in bar
+                colors: ["#fadf6c"],  //text in bar
                 fontSize: 15,
               },
             },
