@@ -1,0 +1,51 @@
+
+.editform-container {
+    margin: 0 auto;
+    border: 1px solid red;
+    
+    h1 {
+        font-size: 32px;
+    }
+    input {
+        background-color: white;
+        width: 328px;
+        height: 45px;
+        border-radius: 5px;
+        border: 1px;
+        padding-left: 10px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    select {
+        background-color: white;
+        width: 340px;
+        height: 45px;
+        border-radius: 5px;
+        border: 1px;
+        padding-left: 10px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    textarea {
+        background-color: white;
+        width: 328px;
+        height: 75px;
+        border-radius: 5px;
+        border: 1px;
+        padding-left: 10px;
+    }
+    label {
+        font-size: 20px;
+    }
+    button {
+        background-color: #22345C;
+        width: 328px;
+        height: 49px;
+        color: white;
+        font-size: 16px;
+        margin-top: 30px;
+    }
+  
+}
+    
+
