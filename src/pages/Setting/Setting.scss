@@ -1,14 +1,14 @@
-* {
-    /* border: red solid 1px; */
-    margin: 10px;
-}
+// *  {
+//     /* border: red solid 1px; */
+//     margin: 10px;
+// }
 
 .setting {
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-    padding-top: 50px;
+    padding-top: 50px;   
 }
 
 .setting-forms {
@@ -16,6 +16,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    
 h2 {
     width: 90%;
     text-align: center;
@@ -23,11 +24,13 @@ h2 {
 
 #info-container{
     border-right: black 1px solid;
+    
 }
 }
 
 #name-top {
     text-align: left;
+    
 }
 
 .personal-infomation {
@@ -35,10 +38,13 @@ h2 {
     display: flex;
     flex-direction: column;
     margin-bottom: 0px;
+   
+    
 
 label{
     padding-right: 40px;
     margin-bottom: 0px;
+    margin: 5px;
 }
 
 }
@@ -50,6 +56,7 @@ label{
     border-radius: 5px;
     border: 1px;
     padding-left: 5px;
+    margin: 10px;
 }
 
 
@@ -58,28 +65,33 @@ label{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    
 }
 
 .goal-form {
     display: flex;
     flex-direction: column;
+    margin: 10px;
  label{
     margin-bottom: 0px;
+    margin: 5px;
     }
 }
 
 .setting a {
     text-align: right;
+    margin: 15px;
 }
 
 #goal-h2 {
     width: 100%;
+    
 }
 
 button {
     background-color: #22345C;
         border: none;
         color: #EFEFE9;
-        margin-top: 20px;
+        margin-top: 30px;
         border-radius: 5%;
 }
