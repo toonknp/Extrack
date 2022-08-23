@@ -1,311 +1,312 @@
 body {
-    margin: 0;
-    padding: 0;
-  }
-  
-  .dash-board {
+  margin: 0;
+  padding: 0;
+}
+
+.dash-board {
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+}
+
+.container-dash {
+  display: flex;
+  padding: 0 100px 0 0;
     display: flex;
-    flex-direction: column;
-    padding-top: 50px;
-  }
-  
-  .container-dash {
+    justify-content: center;
+}
+
+.container-dash .subconleft-dash {
+  display: flex;
+  flex-direction: column;
+  margin-left: 130px;
+}
+
+/* .container-dash .subconright-dash {
+   max-width: 20%; 
+  display: flex;
+  flex-direction: column;
+} */
+
+.container-dash .subconleft-dash .upleftsub {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-dash .subconleft-dash .upleftsub .upleftsub-head {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30px;
+  margin: 30px 0 10px 0;
+}
+
+.container-dash .subconleft-dash .upleftsub .upleftsub-head .userhead {
     display: flex;
-    padding: 0 100px 0 0;
-      display: flex;
-      justify-content: center;
-  }
-  
-  .container-dash .subconleft-dash {
-    display: flex;
-    flex-direction: column;
-    margin-left: 130px;
-  }
-  
-  /* .container-dash .subconright-dash {
-     max-width: 20%; 
-    display: flex;
-    flex-direction: column;
-  } */
-  
-  .container-dash .subconleft-dash .upleftsub {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .container-dash .subconleft-dash .upleftsub .upleftsub-head {
-    display: inline-flex;
-    justify-content: space-between;
     align-items: center;
-    padding-left: 30px;
-    margin: 30px 0 10px 0;
-  }
+    margin-right: 90px;
+}
+
+.container-dash .subconleft-dash .upleftsub .upleftsub-board {
+  display: flex;
+  margin-top: 20px;
+}
+
+.container-dash .subconleft-dash .upleftsub .upleftsub-board .goal-dash {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-dash
+  .subconleft-dash
+  .upleftsub
+  .upleftsub-board
+  .goal-dash
+  .headgoal-dash {
+  display: flex;
+  margin: 0 0 10px 10px;
+}
+
+.container-dash
+  .subconleft-dash
+  .upleftsub
+  .upleftsub-board
+  .goal-dash
+  .headgoal-dash
+  img {
+  height: 42px;
+  width: 42px;
+}
+
+.container-dash
+  .subconleft-dash
+  .upleftsub
+  .upleftsub-board
+  .goal-dash
+  .headgoal-dash
+  h3 {
+  margin-left: 20px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.container-dash
+  .subconleft-dash
+  .upleftsub
+  .upleftsub-board
+  .goal-dash
+  .inspiration-goal-dash {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #000;
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 0 80px 30px 0;
+  color:#22345C;
+}
+
+.container-dash
+  .subconleft-dash
+  .upleftsub
+  .upleftsub-board
+  .goal-dash
+  .inspiration-goal-dash
+  .inspiration {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 21px;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0px;
+}
+
+.container-dash
+  .subconleft-dash
+  .upleftsub
+  .upleftsub-board
+  .goal-dash
+  .inspiration-goal-dash
+  .inspiration-content-input {
+  font-size: 16px;
+  margin-bottom: 0px;
+  display: flex;
+  align-items: center;
+}
+
+.container-dash
+  .subconleft-dash
+  .upleftsub
+  .upleftsub-board
+  .goal-dash
+  .inspiration-goal-dash
+  .goal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-dash
+  .subconleft-dash
+  .upleftsub
+  .upleftsub-board
+  .goal-dash
+  .inspiration-goal-dash
+  .goal-content
+  h1 {
+  margin-right: 10px;
+  font-size: 40px;
+}
+
+.container-dash
+  .subconleft-dash
+  .upleftsub
+  .upleftsub-board
+  .goal-dash
+  .inspiration-goal-dash
+  .goal-content
+  h2 {
+  margin-right: 5px;
   
-  .container-dash .subconleft-dash .upleftsub .upleftsub-head .userhead {
-      display: flex;
-      align-items: center;
-      margin-right: 90px;
-  }
-  
-  .container-dash .subconleft-dash .upleftsub .upleftsub-board {
-    display: flex;
-    margin-top: 20px;
-  }
-  
-  .container-dash .subconleft-dash .upleftsub .upleftsub-board .goal-dash {
+}
+
+.container-dash
+  .subconleft-dash
+  .upleftsub
+  .upleftsub-board
+  .goal-dash
+  .bmi-goal-dash {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #000;
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px 80px 10px 0;
+  color:#22345C;
+}
+
+.container-dash
+  .subconleft-dash
+  .upleftsub
+  .upleftsub-board
+  .goal-dash
+  .bmi-goal-dash
+  h4 {
+  display: inline-flex;
+  justify-content: flex-start;
+  font-size: 20px;
+}
+
+.container-dash
+  .subconleft-dash
+  .upleftsub
+  .upleftsub-board
+  .goal-dash
+  .bmi-goal-dash
+  h1 {
+  display: inline-flex;
+  justify-content: center;
+  font-size: 40px;
+  margin-top: 20px;
+}
+
+/* session graph */
+
+.container-dash .subconleft-dash .upleftsub .upleftsub-board .graph-dash {
+  display: flex;
+  flex-direction: column;
+
+}
+
+/* head graph */
+
+.container-dash
+  .subconleft-dash
+  .upleftsub
+  .upleftsub-board
+  .graph-dash
+  .headtracking {
+  display: flex;
+  align-items: center;
+  margin: 0 0 10px 30px;
+}
+
+.container-dash
+  .subconleft-dash
+  .upleftsub
+  .upleftsub-board
+  .graph-dash
+  .headtracking
+  img {
+  height: 42px;
+  width: 42px;
+  margin-right: 20px;
+}
+
+.container-dash
+  .subconleft-dash
+  .upleftsub
+  .upleftsub-board
+  .graph-dash
+  .headtracking
+  p {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* chart tracking */
+
+.container-dash
+  .subconleft-dash
+  .upleftsub
+  .upleftsub-board
+  .graph-dash
+  .bar-chart-tracking {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #000;
+  background-color: white;
+  border-radius: 10px;
+  margin: 0 0px 0 10px;
+}
+
+/* Recent activity */
+
+.container-dash
+  .subconleft-dash
+  .downleftsub-board {
     display: flex;
     flex-direction: column;
   }
-  
+
   .container-dash
-    .subconleft-dash
-    .upleftsub
-    .upleftsub-board
-    .goal-dash
-    .headgoal-dash {
+  .subconleft-dash
+  .downleftsub-board
+  .head-recentact {
     display: flex;
+    align-items: center;
     margin: 0 0 10px 10px;
   }
-  
+
   .container-dash
-    .subconleft-dash
-    .upleftsub
-    .upleftsub-board
-    .goal-dash
-    .headgoal-dash
-    img {
-    height: 42px;
-    width: 42px;
-  }
-  
-  .container-dash
-    .subconleft-dash
-    .upleftsub
-    .upleftsub-board
-    .goal-dash
-    .headgoal-dash
-    h3 {
-    margin-left: 20px;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 24px;
+  .subconleft-dash
+  .downleftsub-board
+  .head-recentact img {
     display: flex;
-    align-items: center;
-  }
-  
-  .container-dash
-    .subconleft-dash
-    .upleftsub
-    .upleftsub-board
-    .goal-dash
-    .inspiration-goal-dash {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #000;
-    background-color: white;
-    border-radius: 10px;
-    padding: 15px;
-    margin: 0 80px 30px 0;
-    color:#22345C;
-  }
-  
-  .container-dash
-    .subconleft-dash
-    .upleftsub
-    .upleftsub-board
-    .goal-dash
-    .inspiration-goal-dash
-    .inspiration {
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 21px;
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 5px;
-  }
-  
-  .container-dash
-    .subconleft-dash
-    .upleftsub
-    .upleftsub-board
-    .goal-dash
-    .inspiration-goal-dash
-    .inspiration-content-input {
-    font-size: 16px;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .container-dash
-    .subconleft-dash
-    .upleftsub
-    .upleftsub-board
-    .goal-dash
-    .inspiration-goal-dash
-    .goal-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .container-dash
-    .subconleft-dash
-    .upleftsub
-    .upleftsub-board
-    .goal-dash
-    .inspiration-goal-dash
-    .goal-content
-    h1 {
-    margin-right: 10px;
-    font-size: 40px;
-  }
-  
-  .container-dash
-    .subconleft-dash
-    .upleftsub
-    .upleftsub-board
-    .goal-dash
-    .inspiration-goal-dash
-    .goal-content
-    h2 {
-    margin-right: 5px;
-  }
-  
-  .container-dash
-    .subconleft-dash
-    .upleftsub
-    .upleftsub-board
-    .goal-dash
-    .bmi-goal-dash {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #000;
-    background-color: white;
-    border-radius: 10px;
-    padding: 15px;
-    margin: 0 80px 20px 0;
-    color:#22345C;
-  }
-  
-  .container-dash
-    .subconleft-dash
-    .upleftsub
-    .upleftsub-board
-    .goal-dash
-    .bmi-goal-dash
-    h4 {
-    display: inline-flex;
-    justify-content: flex-start;
-    font-size: 20px;
-  }
-  
-  .container-dash
-    .subconleft-dash
-    .upleftsub
-    .upleftsub-board
-    .goal-dash
-    .bmi-goal-dash
-    h1 {
-    display: inline-flex;
-    justify-content: center;
-    font-size: 40px;
-  }
-  
-  /* session graph */
-  
-  .container-dash .subconleft-dash .upleftsub .upleftsub-board .graph-dash {
-    display: flex;
-    flex-direction: column;
-  
-  }
-  
-  /* head graph */
-  
-  .container-dash
-    .subconleft-dash
-    .upleftsub
-    .upleftsub-board
-    .graph-dash
-    .headtracking {
-    display: flex;
-    align-items: center;
-    margin: 0 0 10px 30px;
-  }
-  
-  .container-dash
-    .subconleft-dash
-    .upleftsub
-    .upleftsub-board
-    .graph-dash
-    .headtracking
-    img {
-    height: 42px;
-    width: 42px;
     margin-right: 20px;
+    height: 45px;
+    width: 45px;
   }
-  
+
   .container-dash
-    .subconleft-dash
-    .upleftsub
-    .upleftsub-board
-    .graph-dash
-    .headtracking
-    p {
+  .subconleft-dash
+  .downleftsub-board
+  .head-recentact p {
+    display: flex;
     font-size: 20px;
     font-weight: 700;
   }
-  
-  /* chart tracking */
-  
-  .container-dash
-    .subconleft-dash
-    .upleftsub
-    .upleftsub-board
-    .graph-dash
-    .bar-chart-tracking {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #000;
-    background-color: white;
-    border-radius: 10px;
-    margin: 0 0px 0 20px;
-  }
-  
-  /* Recent activity */
-  
-  .container-dash
-    .subconleft-dash
-    .downleftsub-board {
-      display: flex;
-      flex-direction: column;
-    }
-  
-    .container-dash
-    .subconleft-dash
-    .downleftsub-board
-    .head-recentact {
-      display: flex;
-      align-items: center;
-      margin: 0 0 10px 10px;
-    }
-  
-    .container-dash
-    .subconleft-dash
-    .downleftsub-board
-    .head-recentact img {
-      display: flex;
-      margin-right: 20px;
-      height: 45px;
-      width: 45px;
-    }
-  
-    .container-dash
-    .subconleft-dash
-    .downleftsub-board
-    .head-recentact p {
-      display: flex;
-      font-size: 20px;
-      font-weight: 700;
-    }
-  

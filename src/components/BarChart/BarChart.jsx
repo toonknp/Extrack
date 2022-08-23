@@ -44,7 +44,7 @@ function BarChart() {
         <Chart
           type="bar"
           width={650}
-          height={410}
+          height={387}
           series={[
             {
               name: "Track History",
