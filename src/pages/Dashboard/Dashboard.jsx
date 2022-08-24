@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import BarChart from "../../components/BarChart/BarChart";
-// import ProfileSession from "../../components/ProfileSession/ProfileSession";
 import NavBar from "../../components/NavBar/NavBar";
 import axiosInstance from "../../configs/axios";
 import "./Dashboard.css";
@@ -9,17 +8,16 @@ import CartList from "../../components/CartList/CardList";
 const Dashboard = () => {
   const [cards, setCards] = useState([]);
   const recentCards = cards.slice(0, 2);
-
   const [dailyStats, setDailyStats] = useState([]);
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState({});
+
 
   const BMI = (user.weight / (user.height / 100) ** 2).toFixed(2);
 
   const getDailyStats = async () => {
     setLoading(true);
-    const response = await axiosInstance.get("user/activities/daily-stats");
-    // console.log(response.data);
+    const response = await axiosInstance.get("user/activities/dailystats");
     setDailyStats(response.data);
     setLoading(false);
   };
@@ -44,7 +42,6 @@ const Dashboard = () => {
       }
     });
     goalAchieved = achievedDays.length;
-    // console.log(achievedDays.length);
   };
   getGoalAchieved();
 
@@ -53,6 +50,7 @@ const Dashboard = () => {
     getDailyStats();
     getData();
   }, []);
+
 
   return (
     <div className="dash-board">
@@ -104,50 +102,14 @@ const Dashboard = () => {
                 src="./assets/icons8-track-and-field-skin-type-1-100.png"
                 alt=""
               />
-              <p>Recent Activities</p>
-            </div>
+              <p>Recent Activities</p> 
+              <a href='/activities'><img src="./assets/icons8-menu-100.png" alt=""/></a>         
+            </div>      
             <div className="recent-content">
               <CartList cards={recentCards} />
             </div>
           </div>
         </section>
-
-      
-
-      {/*<session className="subconright-dash">
-        <div className="upright-dash">
-          {/* only set backgroung color 
-          <img src="#" alt="" />
-        </div>
-        <div className="downright-dash">
-          <div className="content1">
-            <div className="nameprofile">
-              <h2>John Doe</h2>
-              <p>@username</p>
-            </div>
-            <p>รับค่า inspiration มา</p>
-          </div>
-          <div className="content2">
-            <div className="height">
-              <p>Height</p>
-              <h2>166</h2>
-            </div>
-            <div className="weight">
-              <p>Weight</p>
-              <h2>99</h2>
-            </div>
-          </div>
-          <div className="content3">
-            <p>Bio</p>
-            <div className="perdata">
-              <p>Name: John Doe</p>
-              <p>Birth Date: 1/1/1111</p>
-              <p>Age: 22</p>
-            </div>
-            {/* <button /> ปุ่มบวก 
-          </div>
-        </div>
-      </session>*/}
       </div>
     </div>
   );
