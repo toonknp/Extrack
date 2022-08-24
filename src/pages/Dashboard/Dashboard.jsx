@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import BarChart from "../../components/BarChart/BarChart";
 import NavBar from "../../components/NavBar/NavBar";
 import axiosInstance from "../../configs/axios";
+import { Link } from "react-router-dom";
 import "./Dashboard.css";
 import CartList from "../../components/CartList/CardList";
 
@@ -32,7 +33,7 @@ const Dashboard = () => {
     setCards(response.data);
   };
 
-  const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+  const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000 + (7 * 60 * 60 * 1000));
 
   let goalAchieved = 0;
   const getGoalAchieved = () => {
@@ -102,9 +103,9 @@ const Dashboard = () => {
                 src="./assets/icons8-track-and-field-skin-type-1-100.png"
                 alt=""
               />
-              <p>Recent Activities</p> 
-              <a href='/activities'><img src="./assets/icons8-menu-100.png" alt=""/></a>         
-            </div>      
+              <p>Recent Activities</p>
+              <Link to='/activities'><img src="./assets/icons8-menu-100.png" alt=""/></Link>
+            </div>
             <div className="recent-content">
               <CartList cards={recentCards} />
             </div>

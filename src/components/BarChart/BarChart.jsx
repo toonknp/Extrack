@@ -1,45 +1,91 @@
-
 import Chart from "react-apexcharts";
 import React, { useState, useEffect } from "react";
 
-function BarChart() {
+const BarChart = ({ dailyStats, loading }) => {
+  if (loading) return <h2>Loading..</h2>
+
   const [trackingName, setTrackingName] = useState([]);
   const [trackingValue, setTrackingValue] = useState([]);
 
-  useEffect
-    (() => {
-      const recentSevenDay = [];
-      const trackingValuePerDay = [];
 
-      const getTrackinkRecord = async () => {
-        const dataRequest = await fetch("#");
-        const dataResponse = await dataRequest.json();
+  const getWeekDay = (firstDay) => {
+    const day = firstDay.getDay()
+    switch (day) {
+      case 0:
+        return ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat']
+        break
+      case 1:
+        return ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
+        break
+      case 2:
+        return ['tue', 'wed', 'thu', 'fri', 'sat', 'sun', 'mon']
+        break
+      case 3:
+        return ['wed', 'thu', 'fri', 'sat', 'sun', 'mon', 'tue']
+        break
+      case 4:
+        return ['thu', 'fri', 'sat', 'sun', 'mon', 'tue', 'wed']
+          break
+      case 5:
+        return ['fri', 'sat', 'sun', 'mon', 'tue', 'wed', 'thu']
+        break
+      case 6:
+        return ['sat', 'sun', 'mon', 'tue', 'wed', 'thu', 'fri']
+        break
+    }
+  }
 
-        //console.log(dataResponse); -> array
+  const getWeeklyStats = () => {
+    //get last 7 days' date
+    const sevenDays = [...Array(7).keys()].map(index => {
+      const date = new Date();
+      date.setDate(date.getDate() - index);
+      return date.toISOString().slice(0, 10);
+    });
+    // console.log('date', sevenDays)
 
-        //ดึงข้อมูลมาทำชื่อกราฟแกน x -> ดึง 7 วันล่าสุด
-        for (let i = 0; i < dataResponse.length; i++) {
-          recentSevenDay.push(dataResponse[i].recent7dayInDB); //ดึงจาก database ที่เก็บ 7 วันล่าสุด ??
-          trackingValuePerDay.push(dataResponse[i].valueExerciseInDB); //ดึงจาก database ที่เก็บ 7 วันล่าสุด ??
+    const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000 + (7 * 60 * 60 * 1000))
+
+    // get last 7 days' data
+    let currentWeek = []
+    for (let day of dailyStats) {
+      if (Date.parse(day._id) >= Date.parse(sevenDaysAgo)) {
+        day._id = day._id.slice(0, 10)
+        currentWeek.push(day)
+      }
+    }
+    // console.log('test', currentWeek)
+
+    // keep data in weeklyStats
+    let weeklyStats = {}
+    for (let i = 0; i < sevenDays.length; i++) {
+      for (let date of currentWeek) {
+        if (sevenDays[i] == date._id) {
+          weeklyStats[sevenDays[i]] = date.total_duration
+          break;
         }
+        weeklyStats[sevenDays[i]] = 0
+      }
+    }
+    
+    const reversedValues = Object.values(weeklyStats).reverse();
+    // console.log('weeklyStats', weeklyStats)
+    // setTrackingValue(Object.values(weeklyStats))
+    setTrackingValue(reversedValues)
+    // set keys of chart
+    // setTrackingName(Object.keys(weeklyStats))
+    setTrackingName(getWeekDay(sevenDaysAgo))
 
-        // console.log(recentSevenDay);
-        // console.log(trackingValuePerDay);
+  }
 
-        setTrackingName(recentSevenDay);
-        setTrackingValue(trackingValuePerDay);
-      };
-
-      getTrackinkRecord();
-    },
-    []);
-
-
+  useEffect(() => {
+    getWeeklyStats()
+  }, [])
 
   return (
     <React.Fragment>
       <div className="container-fluid mb-5">
-        <h2 className="text-center mt-3 mb-3">Track History</h2>
+        <h2 className="text-center mt-3 mb-3"></h2>
 
         <Chart
           type="bar"
@@ -47,14 +93,14 @@ function BarChart() {
           height={387}
           series={[
             {
-              name: "Track History",
-              data: [1,2,3,4,5,6,7],//trackingValue,   //ก่อนเอามาใช้ตรงนี้ต้องเปลี่ยนจาก objarray -> array ก่อน | ยังไม่ทำ!!
+              name: "Total Duration",
+              data: trackingValue,
             },
           ]}
           options={{
             title: {
               text: "",
-              style: { fontSize: 20 },
+              style: { fontSize: 30 },
             },
 
             subtitle: {
@@ -62,15 +108,15 @@ function BarChart() {
               style: { fontSize: 18 },
             },
 
-            colors: ["#22345c"],  //สีกราฟแท่ง 
-            theme: { mode: "Heavy" },
+            colors: ["#22345C"],  //สีกราฟแท่ง 
+            theme: { mode: "light" },
 
             xaxis: {
               tickPlacement: "on",
-              categories: trackingName,  //ก่อนเอามาใช้ตรงนี้ต้องเปลี่ยนจาก objarray -> array ก่อน | ยังไม่ทำ!!
+              categories: trackingName,
               title: {
                 text: "Day per week",
-                style: { color: "#22345c", fontSize: 17   },  //สีชื่อแกน x
+                style: { color: "#040404", fontSize: 17 },  //สีชื่อแกน x
               },
             },
 
@@ -79,11 +125,11 @@ function BarChart() {
                 formatter: (val) => {
                   return `${val}`;
                 },
-                style: { fontSize: "17", colors: ["#22345c"] }, //สีอักษรแกน y
+                style: { fontSize: "15", colors: ["#34495E"] }, //สีอักษรแกน y
               },
               title: {
                 text: "Time (minute)",
-                style: { color: "#22345c", fontSize: 17 },  //สีแกน y
+                style: {color: "#040404", fontSize: 17 },  //สีแกน y
               },
             },
 
@@ -97,7 +143,7 @@ function BarChart() {
                 return `${val}`;
               },
               style: {
-                colors: ["#fadf6c"],  //text in bar
+                colors: ["#F1C40F"],  //text in bar
                 fontSize: 15,
               },
             },
@@ -109,84 +155,3 @@ function BarChart() {
 }
 
 export default BarChart;
-
-
-
-
-//แบบอื่นและสวยกว่า
-
-// class ApexChart extends React.Component {
-//   constructor(props) {
-//     super(props);
-
-//     this.state = {
-    
-//       series: [{
-//         data: [21, 22, 10, 28, 16, 21, 13, 30]
-//       }],
-//       options: {
-//         chart: {
-//           height: 350,
-//           type: 'bar',
-//           events: {
-//             click: function(chart, w, e) {
-//               // console.log(chart, w, e)
-//             }
-//           }
-//         },
-//         colors: colors,
-//         plotOptions: {
-//           bar: {
-//             columnWidth: '45%',
-//             distributed: true,
-//           }
-//         },
-//         dataLabels: {
-//           enabled: false
-//         },
-//         legend: {
-//           show: false
-//         },
-//         xaxis: {
-//           categories: [
-//             ['John', 'Doe'],
-//             ['Joe', 'Smith'],
-//             ['Jake', 'Williams'],
-//             'Amber',
-//             ['Peter', 'Brown'],
-//             ['Mary', 'Evans'],
-//             ['David', 'Wilson'],
-//             ['Lily', 'Roberts'], 
-//           ],
-//           labels: {
-//             style: {
-//               colors: colors,
-//               fontSize: '12px'
-//             }
-//           }
-//         }
-//       },
-    
-    
-//     };
-//   }
-
-
-
-//   render() {
-//     return (
-      
-
-// <div id="chart">
-// <ReactApexChart options={this.state.options} series={this.state.series} type="bar" height={350} />
-// </div>
-
-
-//     );
-//   }
-// }
-
-// const domContainer = document.querySelector('#app');
-// ReactDOM.render(React.createElement(ApexChart), domContainer);
-
-//ref https://apexcharts.com/react-chart-demos/column-charts/distributed/
